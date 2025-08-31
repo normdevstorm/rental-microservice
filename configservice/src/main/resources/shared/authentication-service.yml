@@ -1,12 +1,12 @@
 server:
-  port: 9088
+  port: 8082
 spring:
   session:
     jdbc:
       table-name: SPRING_SESSION_AUTH
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rental_auth?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/rental_auth?createDatabaseIfNotExist=true&useSSL=false
     username: nam
     password: nam123
   jpa:
@@ -30,6 +30,9 @@ logging:
       springframework: info
       hibernate:
         sql: info
+api:
+  server:
+    url: http://localhost:8080/auth
 #
 #springdoc:
 #  api-docs:

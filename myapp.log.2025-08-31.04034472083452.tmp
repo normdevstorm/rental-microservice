@@ -1,0 +1,30 @@
+2025-09-01T00:00:54.055+07:00  INFO 63846 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-01T00:01:54.060+07:00  INFO 63846 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 4ms
+2025-09-01T00:02:54.060+07:00  INFO 63846 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-01T00:03:54.060+07:00  INFO 63846 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-01T00:04:54.060+07:00  INFO 63846 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-01T00:05:31.843+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DISCOVERY-SERVICE with eureka with status DOWN
+2025-09-01T00:05:31.862+07:00  INFO 63846 --- [http-nio-9999-exec-8] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status DOWN (replication=false)
+2025-09-01T00:05:31.872+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2025-09-01T00:05:31.896+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2025-09-01T00:05:31.932+07:00 ERROR 63846 --- [Eureka-Jersey3Client-Conn-Cleaner2] [discovery-service,,]c.n.d.s.t.j.EurekaJersey3ClientImpl      : Cannot clean connections
+
+java.lang.IllegalStateException: Client instance has been closed.
+	at org.glassfish.jersey.internal.guava.Preconditions.checkState(Preconditions.java:169) ~[jersey-common-3.1.7.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.checkNotClosed(JerseyClient.java:248) ~[jersey-client-3.1.7.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:363) ~[jersey-client-3.1.7.jar:na]
+	at org.glassfish.jersey.client.JerseyClient.getConfiguration(JerseyClient.java:54) ~[jersey-client-3.1.7.jar:na]
+	at com.netflix.discovery.shared.transport.jersey3.EurekaJersey3ClientImpl$ConnectionCleanerTask.run(EurekaJersey3ClientImpl.java:347) ~[eureka-client-jersey3-2.0.2.jar:2.0.2]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:1583) ~[na:na]
+
+2025-09-01T00:05:31.951+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shut down
+2025-09-01T00:05:31.952+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2025-09-01T00:05:31.953+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2025-09-01T00:05:31.970+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shut down
+2025-09-01T00:05:31.997+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-01T00:05:32.000+07:00  INFO 63846 --- [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

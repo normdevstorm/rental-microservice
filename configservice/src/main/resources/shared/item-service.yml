@@ -3,7 +3,7 @@ server:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rental_item
+    url: jdbc:mysql://localhost:3306/rental_item?verifyServerCertificate=false&useSSL=true
     username: nam
     password: nam123
   jpa:
@@ -30,7 +30,9 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: basic
-
+api:
+  server:
+    url: http://localhost:8080/item
 #springdoc:
 #  api-docs:
 #    path: /v1/api-docs
