@@ -15,7 +15,7 @@
         <module name="notificationservice" />
         <module name="gatewayservice" />
       </profile>
-      <profile name="Annotation profile for item-service" enabled="true">
+      <profile name="Annotation profile for rental_microservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -41,6 +41,7 @@
       <module name="authentication-service (1)" options="-parameters" />
       <module name="authenticationservice" options="-parameters" />
       <module name="configservice" options="-parameters" />
+      <module name="demo_microservice-" options="" />
       <module name="discoveryservice" options="-parameters" />
       <module name="gatewayservice" options="-parameters" />
       <module name="itemservice" options="-parameters" />
