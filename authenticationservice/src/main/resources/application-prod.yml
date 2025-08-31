@@ -1,0 +1,21 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: Renting platform
+  datasource:
+    driver-class-name: ${DB_DRIVER_CLASS_NAME}
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+logging:
+  level:
+    root: info
+    org:
+      springframework: info
+      hibernate:
+        sql: info

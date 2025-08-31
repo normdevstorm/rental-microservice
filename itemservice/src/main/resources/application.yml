@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: item-service
+  config:
+    import: configserver:http://localhost:8888
+  profiles:
+    active: dev
+  datasource:
+    driver-class-name: ${DB_DRIVER_CLASS_NAME}
+    url: ${DB_URL}
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
