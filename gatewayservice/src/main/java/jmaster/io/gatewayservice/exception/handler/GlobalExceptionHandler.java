@@ -37,9 +37,9 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(value = {MissingAuthorizationHeader.class})
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST)
+    @ResponseStatus(value = HttpStatus.UNAUTHORIZED)
     public ResponseEntity<GenericException> handleMissingAuthorizationHeaderException(MissingAuthorizationHeader e) {
-        GenericException genericResponse = GenericException.builder().timestamp(new Date()).status(HttpStatus.BAD_REQUEST).message(e.getMessage()).details(e.getMessage()).build();
+        GenericException genericResponse = GenericException.builder().timestamp(new Date()).status(HttpStatus.UNAUTHORIZED).message(e.getMessage()).details(e.getMessage()).build();
 //        if (e.getCause() != null) {
 //            log.warn(e.getCause().getMessage());
 //        }
