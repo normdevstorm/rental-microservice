@@ -1,0 +1,261 @@
+2025-09-07T01:51:41.013+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T01:51:41.020+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2025-09-07T01:51:41.021+07:00  WARN 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for GATEWAY-SERVICE/archlinux:gateway-service:8080
+2025-09-07T01:51:41.022+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/archlinux:gateway-service:8080 (replication=false)
+2025-09-07T01:51:51.593+07:00  WARN 636084 --- [http-nio-9999-exec-3] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - archlinux:gateway-service:8080
+2025-09-07T01:51:51.593+07:00  WARN 636084 --- [http-nio-9999-exec-3] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - archlinux:gateway-service:8080
+2025-09-07T01:51:52.033+07:00  INFO 636084 --- [http-nio-9999-exec-6] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status UP (replication=false)
+2025-09-07T01:51:52.546+07:00  INFO 636084 --- [http-nio-9999-exec-7] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status UP (replication=true)
+2025-09-07T01:52:41.013+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T01:53:41.013+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T01:54:41.013+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T01:55:41.013+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T01:56:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T01:57:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T01:58:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T01:59:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:00:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:01:40.657+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T02:01:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:02:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:03:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:04:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:05:41.014+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:06:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:07:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:08:41.016+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:09:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:10:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:11:41.016+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:12:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:13:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:14:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:15:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:16:40.658+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T02:16:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:17:41.015+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:18:41.016+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:19:41.016+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:20:41.016+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:21:41.017+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:22:41.016+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:23:41.017+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:24:41.017+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:25:41.017+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:26:41.428+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:27:41.428+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:28:41.429+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:29:41.429+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:30:41.430+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:31:41.067+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T02:31:41.430+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:32:41.430+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:33:41.430+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:34:41.431+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:35:41.431+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:36:41.432+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:37:41.432+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:38:41.432+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:39:41.432+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:40:41.432+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:41:41.432+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:42:41.432+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:43:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:44:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:45:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:46:41.068+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T02:46:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:47:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:48:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:49:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:50:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:51:41.433+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:52:41.434+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:53:41.434+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:54:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:55:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:56:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:57:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:58:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T02:59:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:00:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:01:41.068+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T03:01:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:02:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:03:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:04:41.436+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:05:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:06:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:07:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:08:41.435+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:09:41.436+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:10:41.436+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:11:41.437+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:12:41.437+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:13:41.438+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:14:41.438+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:15:41.438+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:16:41.068+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T03:16:41.438+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:17:41.438+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:18:41.438+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:19:41.438+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:20:41.439+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:21:41.439+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:22:41.439+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:23:41.439+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:24:41.439+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:25:41.439+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:26:41.439+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:27:41.440+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:28:41.441+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 1ms
+2025-09-07T03:29:41.441+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:30:41.441+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:31:41.069+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T03:31:41.441+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:32:41.442+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:33:41.442+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:34:41.443+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:35:41.443+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:36:41.443+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:37:41.443+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T03:38:41.443+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:05:52.173+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:06:52.173+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:07:52.174+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:08:52.174+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:09:52.174+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:10:52.174+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:11:52.174+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:12:51.798+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T06:12:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:13:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:14:52.176+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:15:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:16:52.176+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:17:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:18:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:19:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:20:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:21:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:22:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:23:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:24:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:25:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:26:52.176+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:27:51.798+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T06:27:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:28:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:29:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:30:52.175+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:31:52.176+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:32:52.176+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:33:52.176+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:34:52.176+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:35:52.176+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:36:52.584+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:37:52.585+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T06:38:52.585+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:41:10.864+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:41:10.865+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Evicting 1 items (expired=3, evictionLimit=1)
+2025-09-07T09:41:10.866+07:00  WARN 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: expired lease for GATEWAY-SERVICE/archlinux:gateway-service:8080
+2025-09-07T09:41:10.867+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/archlinux:gateway-service:8080 (replication=false)
+2025-09-07T09:41:28.969+07:00  WARN 636084 --- [http-nio-9999-exec-5] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - archlinux:gateway-service:8080
+2025-09-07T09:41:28.972+07:00  WARN 636084 --- [http-nio-9999-exec-5] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - archlinux:gateway-service:8080
+2025-09-07T09:41:29.064+07:00  INFO 636084 --- [http-nio-9999-exec-10] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status UP (replication=false)
+2025-09-07T09:41:29.291+07:00  INFO 636084 --- [http-nio-9999-exec-6] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status UP (replication=true)
+2025-09-07T09:42:10.865+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:43:10.865+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:44:11.533+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T09:44:11.912+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:45:11.912+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:46:11.912+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:47:11.912+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:48:11.912+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:49:11.912+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:50:11.912+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:51:11.913+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:52:11.913+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:53:11.913+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:54:11.913+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:55:11.913+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:56:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:57:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:58:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T09:59:11.533+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T09:59:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:00:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:01:11.915+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:02:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:03:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:04:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:05:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:06:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:07:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:08:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:09:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:10:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:11:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:12:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:13:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:14:11.533+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T10:14:11.915+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:15:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:16:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:17:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:18:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:19:11.914+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:20:11.915+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:21:11.915+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:22:11.915+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:23:11.915+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:24:11.915+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:25:11.915+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:26:11.916+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:27:11.916+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:28:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:29:11.534+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T10:29:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:30:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:31:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:32:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:33:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:34:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:35:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:36:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:37:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:38:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:39:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:40:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:41:11.918+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:42:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:43:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:44:11.534+07:00  INFO 636084 --- [ReplicaAwareInstanceRegistry - RenewalThresholdUpdater] [discovery-service,,]c.n.e.r.PeerAwareInstanceRegistryImpl    : Current renewal threshold is : 6
+2025-09-07T10:44:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:45:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:45:45.638+07:00  INFO 636084 --- [http-nio-9999-exec-7] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status UP (replication=false)
+2025-09-07T10:45:45.700+07:00  INFO 636084 --- [http-nio-9999-exec-1] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status DOWN (replication=false)
+2025-09-07T10:45:46.211+07:00  INFO 636084 --- [http-nio-9999-exec-4] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status DOWN (replication=true)
+2025-09-07T10:45:49.742+07:00  INFO 636084 --- [http-nio-9999-exec-2] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Cancelled instance GATEWAY-SERVICE/archlinux:gateway-service:8080 (replication=false)
+2025-09-07T10:45:50.094+07:00  WARN 636084 --- [http-nio-9999-exec-5] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: cancel failed because Lease is not registered for: GATEWAY-SERVICE/archlinux:gateway-service:8080
+2025-09-07T10:45:50.094+07:00  INFO 636084 --- [http-nio-9999-exec-5] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Cancel): GATEWAY-SERVICE - archlinux:gateway-service:8080
+2025-09-07T10:45:50.095+07:00  WARN 636084 --- [TaskBatchingWorker-target_localhost-3] [discovery-service,,]c.n.eureka.cluster.ReplicationTask       : The replication of task GATEWAY-SERVICE/archlinux:gateway-service:8080:Cancel@localhost failed with response code 404
+2025-09-07T10:45:50.096+07:00  WARN 636084 --- [TaskBatchingWorker-target_localhost-3] [discovery-service,,]c.netflix.eureka.cluster.PeerEurekaNode  : GATEWAY-SERVICE/archlinux:gateway-service:8080:Cancel@localhost: missing entry.
+2025-09-07T10:46:00.774+07:00  WARN 636084 --- [http-nio-9999-exec-1] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : DS: Registry: lease doesn't exist, registering resource: GATEWAY-SERVICE - archlinux:gateway-service:8080
+2025-09-07T10:46:00.775+07:00  WARN 636084 --- [http-nio-9999-exec-1] [discovery-service,,]c.n.eureka.resources.InstanceResource    : Not Found (Renew): GATEWAY-SERVICE - archlinux:gateway-service:8080
+2025-09-07T10:46:00.795+07:00  INFO 636084 --- [http-nio-9999-exec-10] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status UP (replication=false)
+2025-09-07T10:46:01.001+07:00  INFO 636084 --- [http-nio-9999-exec-2] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Registered instance GATEWAY-SERVICE/archlinux:gateway-service:8080 with status UP (replication=true)
+2025-09-07T10:46:11.917+07:00  INFO 636084 --- [Eureka-EvictionTimer] [discovery-service,,]c.n.e.registry.AbstractInstanceRegistry  : Running the evict task with compensationTime 0ms
+2025-09-07T10:46:21.119+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application DISCOVERY-SERVICE with eureka with status DOWN
+2025-09-07T10:46:21.146+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.server.EurekaServerBootstrap   : Shutting down Eureka Server..
+2025-09-07T10:46:21.171+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2025-09-07T10:46:21.177+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.servo.monitor.StatsMonitor   : Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2025-09-07T10:46:21.182+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.servo.monitor.StatsMonitor   : Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2025-09-07T10:46:21.183+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.servo.monitor.StatsMonitor   : Attempting to get the value for an expired monitor: eurekaServer.replication.executionTime.Will start computing stats again.
+2025-09-07T10:46:21.185+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.servo.monitor.StatsMonitor   : Attempting to get the value for an expired monitor: eurekaServer.replication.batchSize.Will start computing stats again.
+2025-09-07T10:46:21.217+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shut down
+2025-09-07T10:46:21.217+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]o.s.c.n.e.server.EurekaServerBootstrap   : Eureka Service is now shutdown...
+2025-09-07T10:46:21.218+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shutting down ...
+2025-09-07T10:46:21.232+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]c.n.eureka.DefaultEurekaServerContext    : Shut down
+2025-09-07T10:46:21.254+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-07T10:46:21.258+07:00  INFO 636084 --- [SpringApplicationShutdownHook] [discovery-service,,]com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

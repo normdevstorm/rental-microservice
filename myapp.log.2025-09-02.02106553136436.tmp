@@ -1,0 +1,50 @@
+2025-09-03T00:00:00.004+07:00 ERROR 54220 --- [spring-session-1] [authentication-service,,]o.s.s.s.TaskUtils$LoggingErrorHandler    : Unexpected error occurred in scheduled task
+
+org.springframework.jdbc.BadSqlGrammarException: PreparedStatementCallback; bad SQL grammar [DELETE FROM SPRING_SESSION_AUTH
+WHERE EXPIRY_TIME < ?
+]
+	at org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator.doTranslate(SQLErrorCodeSQLExceptionTranslator.java:246) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	at org.springframework.jdbc.support.AbstractFallbackSQLExceptionTranslator.translate(AbstractFallbackSQLExceptionTranslator.java:107) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	at org.springframework.jdbc.core.JdbcTemplate.translateException(JdbcTemplate.java:1556) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:677) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:972) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1016) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:1026) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.lambda$cleanUpExpiredSessions$8(JdbcIndexedSessionRepository.java:649) ~[spring-session-jdbc-3.5.2.jar:3.5.2]
+	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140) ~[spring-tx-6.2.10.jar:6.2.10]
+	at org.springframework.session.jdbc.JdbcIndexedSessionRepository.cleanUpExpiredSessions(JdbcIndexedSessionRepository.java:648) ~[spring-session-jdbc-3.5.2.jar:3.5.2]
+	at org.springframework.scheduling.support.DelegatingErrorHandlingRunnable.run(DelegatingErrorHandlingRunnable.java:54) ~[spring-context-6.2.10.jar:6.2.10]
+	at org.springframework.scheduling.concurrent.ReschedulingRunnable.run(ReschedulingRunnable.java:96) ~[spring-context-6.2.10.jar:6.2.10]
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:539) ~[na:na]
+	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264) ~[na:na]
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:304) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136) ~[na:na]
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635) ~[na:na]
+	at java.base/java.lang.Thread.run(Thread.java:840) ~[na:na]
+Caused by: java.sql.SQLSyntaxErrorException: Table 'rental_auth.SPRING_SESSION_AUTH' doesn't exist
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:112) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:114) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:988) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1166) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1101) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1448) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1084) ~[mysql-connector-j-9.4.0.jar:9.4.0]
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61) ~[HikariCP-6.3.2.jar:na]
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java) ~[HikariCP-6.3.2.jar:na]
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$2(JdbcTemplate.java:977) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:658) ~[spring-jdbc-6.2.10.jar:6.2.10]
+	... 14 common frames omitted
+
+2025-09-03T00:00:27.574+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application AUTHENTICATION-SERVICE with eureka with status DOWN
+2025-09-03T00:00:27.575+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756832427575, current=DOWN, previous=UP]
+2025-09-03T00:00:27.576+07:00  INFO 54220 --- [DiscoveryClient-InstanceInfoReplicator-%d] [authentication-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTHENTICATION-SERVICE/archlinux:authentication-service:8082: registering service...
+2025-09-03T00:00:27.580+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-03T00:00:27.587+07:00  INFO 54220 --- [DiscoveryClient-InstanceInfoReplicator-%d] [authentication-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTHENTICATION-SERVICE/archlinux:authentication-service:8082 - registration status: 204
+2025-09-03T00:00:27.587+07:00  INFO 54220 --- [tomcat-shutdown] [authentication-service,,]o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-03T00:00:27.615+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-09-03T00:00:27.620+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-09-03T00:00:27.632+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-09-03T00:00:27.633+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-03T00:00:30.634+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-03T00:00:30.640+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_AUTHENTICATION-SERVICE/archlinux:authentication-service:8082 - deregister  status: 200
+2025-09-03T00:00:30.640+07:00  INFO 54220 --- [SpringApplicationShutdownHook] [authentication-service,,]com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

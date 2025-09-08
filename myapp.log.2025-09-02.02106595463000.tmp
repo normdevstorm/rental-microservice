@@ -1,0 +1,9 @@
+2025-09-03T00:00:08.662+07:00  INFO 36541 --- [File Watcher] [gateway-service,,]rtingClassPathChangeChangedEventListener : Restarting due to 17 class path changes (0 additions, 17 deletions, 0 modifications)
+2025-09-03T00:00:08.695+07:00  INFO 36541 --- [Thread-17] [gateway-service,,]o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application GATEWAY-SERVICE with eureka with status DOWN
+2025-09-03T00:00:08.695+07:00  INFO 36541 --- [Thread-17] [gateway-service,,]com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1756832408695, current=DOWN, previous=UP]
+2025-09-03T00:00:08.698+07:00  INFO 36541 --- [DiscoveryClient-InstanceInfoReplicator-0] [gateway-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/archlinux:gateway-service:8080: registering service...
+2025-09-03T00:00:08.729+07:00  INFO 36541 --- [DiscoveryClient-InstanceInfoReplicator-0] [gateway-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/archlinux:gateway-service:8080 - registration status: 204
+2025-09-03T00:00:09.726+07:00  INFO 36541 --- [Thread-17] [gateway-service,,]com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-09-03T00:00:12.730+07:00  INFO 36541 --- [Thread-17] [gateway-service,,]com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-09-03T00:00:12.736+07:00  INFO 36541 --- [Thread-17] [gateway-service,,]com.netflix.discovery.DiscoveryClient    : DiscoveryClient_GATEWAY-SERVICE/archlinux:gateway-service:8080 - deregister  status: 200
+2025-09-03T00:00:12.745+07:00  INFO 36541 --- [Thread-17] [gateway-service,,]com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient

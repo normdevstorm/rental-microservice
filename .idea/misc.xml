@@ -16,6 +16,7 @@
         <option value="$PROJECT_DIR$/authenticationservice/pom.xml" />
         <option value="$PROJECT_DIR$/itemservice/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/paymentservice/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

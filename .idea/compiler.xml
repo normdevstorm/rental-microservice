@@ -15,7 +15,7 @@
         <module name="notificationservice" />
         <module name="gatewayservice" />
       </profile>
-      <profile name="Annotation profile for rental_microservice" enabled="true">
+      <profile name="Annotation profile for paymentservice" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
@@ -25,6 +25,7 @@
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar" />
           <entry name="$MAVEN_REPOSITORY$/org/projectlombok/lombok-mapstruct-binding/0.2.0/lombok-mapstruct-binding-0.2.0.jar" />
         </processorPath>
+        <module name="paymentservice" />
         <module name="itemservice" />
         <module name="authenticationservice" />
       </profile>
@@ -47,6 +48,7 @@
       <module name="itemservice" options="-parameters" />
       <module name="monitoradmin" options="-parameters" />
       <module name="notificationservice" options="-parameters" />
+      <module name="paymentservice" options="-parameters" />
       <module name="statisticservice" options="-parameters" />
     </option>
   </component>
