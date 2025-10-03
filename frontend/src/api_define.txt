@@ -1,0 +1,103 @@
+ '=
+
+ImageResponse {
+    id: number,
+    imageUrl: string,
+    imageType: ImageType(main, extra)
+}
+
+- filterByCategoryAndAddress()
++ request: category, address
++ response:
+export interface ItemResponse<T> {
+  id: number;
+  owner?: User; // getAll không cần lấy owner
+  name: string;
+  description: string;
+  price: number;
+  latePrice: number;
+  depositNumber: number;
+  amount: number;
+  address: string;
+  conditionRating: number;
+  availabilityStatus: AvailabilityStatusType;
+  createdAt: Date;
+  itemValue: number;
+  category: ItemCategoryType;
+  imageUrl: ImageResponse[]; // 1 list image
+  itemDetail: T // thông tin bảng Car/ Motorbike
+}
+- getItemDetailById:
+request: id
+response: 
+
+export interface ItemDetailResponse<T> {
+  id: number;
+  owner: User;  // Phải có owner trả về (name là được)
+  name: string;
+  description: string;
+  price: number;
+  latePrice: number;
+  depositNumber: number;
+  amount: number;
+  address: string;
+  conditionRating: number;
+  availabilityStatus: AvailabilityStatusType;
+  createdAt: Date;
+  itemValue: number;
+  category: ItemCategoryType;
+  imageUrl: ImageResponse[]; // 1 list image
+  itemDetail: T // thông tin bảng Car/ Motorbike
+}
+
+- getUser()
++ request: 
++ response: UserResponse( tất cả thông tin trừ password)
+
+- updateUser()
++ request: 
+UpdateUserRequest: dùng partialUpdate(), trường nào gửi lên thì update
++ response:
+UserResponse
+
+- createBooking()
++ request: CreateBookingRequest:
+{
+    itemId: int,
+    startTime,
+    endTime,
+    // backend tính toán total amount and deposit
+}
+
+-  getAllBookingByRenter()
+{
+
+}
+
+- getBookingDetailById()
++ request: id
++ response: BookingDetailResponse(cần thêm item)
+
+- updateBookingStatus()
++ request: id, BookingStatus
++ response: message de hien thong bao
+
+- depositPayment()
++ request: bookingId, PaymentStatus 
++ response: message 
+
+- rentingFeePayment()
++ request: bookingId, PaymentStatus 
++ response: message 
+
+- createItem()
++ request: ItemRequest
++ response: ItemResponse
+
+- getAllBookingByOwner()
++ request
++ response: BookingDetailResponse
+
+
+
+
