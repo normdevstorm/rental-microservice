@@ -7,8 +7,8 @@ import { userRepository } from "../../../data/user/repository/user_repository";
 // Header.jsx
 export default function Header() {
   const navigate = useNavigate();
-  
-const [userName, setUserName] = useState<string>("");
+
+  const [userName, setUserName] = useState<string>("");
 
   useEffect(() => {
     // Gọi API lấy profile khi Header mount
@@ -24,7 +24,7 @@ const [userName, setUserName] = useState<string>("");
           <a className="flex items-center gap-3" href="/">
             <img
               loading="lazy"
-              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgG9EmwaZR_pL5y_twJTAVRxjSNMLYhcsVdM1saESMbdZPqnEFOt5wOfbcFtFM6J4dsA&usqp=CAU"
+              src="/mioto_logo.png"
               alt="Mioto"
               className="hidden sm:block h-8 w-auto"
             />
@@ -57,7 +57,7 @@ const [userName, setUserName] = useState<string>("");
             </button>
           </nav>
 
-          <UserMenu name= {userName} />
+          <UserMenu name={userName} />
         </div>
       </div>
     </header>
