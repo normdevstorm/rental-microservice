@@ -32,18 +32,18 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <I18nextProvider i18n={i18n}>
-      <AppStore>
-        <QueryClientProvider client={queryClient}>
-          <AlertProvider>
-            <App />
-          </AlertProvider>
-          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
-        </QueryClientProvider>
-      </AppStore>
-    </I18nextProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <I18nextProvider i18n={i18n}>
+    <AppStore>
+      <QueryClientProvider client={queryClient}>
+        <AlertProvider>
+          <App />
+        </AlertProvider>
+        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+      </QueryClientProvider>
+    </AppStore>
+  </I18nextProvider>
+  // {/* </React.StrictMode> */}
 );
 
 // If you want to start measuring performance in your app, pass a function

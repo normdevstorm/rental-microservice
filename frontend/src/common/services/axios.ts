@@ -44,51 +44,112 @@ const logout = async () => {
   window.location.href = "/login";
 };
 
+// axiosInstance.interceptors.response.use(
+//   (response) => response,
+//   (error: any) => {
+//     const originalConfig = error.config;
+
+//     if (error.response?.status !== 401) {
+//       return Promise.reject(error?.response?.data);
+//     } else {
+//       if (
+//         [
+//           "/auth/signin",
+//           "/auth/signup",
+//           "/auth/logoutone",
+//           "/auth/refresh",
+//         ].every((url) => {
+//           return url != originalConfig.url;
+//         })
+//       ) {
+//         // {logout();}
+//         ///TODO: handle this later after refresh token works properly
+//         const refreshToken =
+//           localStorageService.getLocalStorage("refreshToken");
+//         if (refreshToken === undefined) {
+//           return error;
+//         }
+//         // Axios.defaults.headers.common.Authorization = `Bearer ${refreshToken}`;
+//         return Axios.post(`${API_URL}/auth/refresh`, {
+//           refreshToken: refreshToken,
+//           deviceId: localStorageService.getLocalStorage("fcmToken"),
+//         }).then((res) => {
+//           if (res.status === 200) {
+//             const data = res.data.data as LoginResponse;
+//             localStorageService.setLocalStorage("accessToken", data.token);
+//             localStorageService.setLocalStorage(
+//               "refreshToken",
+//               data.refreshToken
+//             );
+//             originalConfig.headers.Authorization = `Bearer ${data.token}`;
+//             return axiosInstance(originalConfig);
+//           }
+//           logout();
+//           return error;
+//         });
+//       }
+//     }
+//   }
+// );
+
+let isRefreshing = false;
+let failedQueue: any[] = [];
+
+const processQueue = (error: any, token: string | null = null) => {
+  failedQueue.forEach((prom) => {
+    if (token) {
+      prom.resolve(token);
+    } else {
+      prom.reject(error);
+    }
+  });
+  failedQueue = [];
+};
+
 axiosInstance.interceptors.response.use(
   (response) => response,
-  (error: any) => {
-    const originalConfig = error.config;
+  async (error) => {
+    const originalRequest = error.config;
 
-    if (error.response?.status !== 401) {
-      return Promise.reject(error?.response?.data);
-    } else {
-      if (
-        ["/auth/signin", "/auth/signup", "/auth/logoutone"].every((url) => {
-          return url != originalConfig.url;
-        })
-      ) {
-        // {logout();}
-        ///TODO: handle this later after refresh token works properly
-        const refreshToken =
-          localStorageService.getLocalStorage("refreshToken");
-        if (refreshToken === undefined) {
-          return error;
-        }
-        // Axios.defaults.headers.common.Authorization = `Bearer ${refreshToken}`;
-        return Axios.post(`${API_URL}/auth/refresh`, {
-          refreshToken: refreshToken,
+    if (error.response?.status === 401 && !originalRequest._retry) {
+      if (isRefreshing) {
+        return new Promise((resolve, reject) => {
+          failedQueue.push({ resolve, reject });
+        }).then((token) => {
+          originalRequest.headers.Authorization = `Bearer ${token}`;
+          return axiosInstance(originalRequest);
+        });
+      }
+
+      originalRequest._retry = true;
+      isRefreshing = true;
+
+      const refreshToken = localStorageService.getLocalStorage("refreshToken");
+
+      try {
+        const res = await Axios.post(`${API_URL}/auth/refresh`, {
+          refreshToken,
           deviceId: localStorageService.getLocalStorage("fcmToken"),
-        })
-          .then((res) => {
-            if (res.status === 200) {
-              const data = res.data.data as LoginResponse;
-              localStorageService.setLocalStorage("accessToken", data.token);
-              localStorageService.setLocalStorage(
-                "refreshToken",
-                data.refreshToken
-              );
-              originalConfig.headers.Authorization = `Bearer ${data.token}`;
-              return axiosInstance(originalConfig);
-            }
-            logout();
-            return Promise.reject(error);
-          })
-          .catch(() => {
-            logout();
-            return Promise.reject(error);
-          });
+        });
+
+        const data = res.data.data as LoginResponse;
+        localStorageService.setLocalStorage("accessToken", data.token);
+        localStorageService.setLocalStorage("refreshToken", data.refreshToken);
+
+        originalRequest.headers.Authorization = `Bearer ${data.token}`;
+        processQueue(null, data.token);
+
+        return axiosInstance(originalRequest);
+      } catch (err) {
+        processQueue(err, null);
+        logout();
+        return Promise.reject(err);
+      } finally {
+        isRefreshing = false;
       }
     }
+
+    return Promise.reject(error);
   }
 );
 
