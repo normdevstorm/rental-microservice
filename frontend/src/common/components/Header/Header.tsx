@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import UserMenu from "./UserMenu";
 import { useNavigate } from "react-router-dom";
-import { authRepository } from "../../../data/auth/repository/auth_reponsitory";
 import { userRepository } from "../../../data/user/repository/user_repository";
 
 // Header.jsx

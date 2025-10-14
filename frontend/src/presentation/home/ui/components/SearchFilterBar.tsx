@@ -1,12 +1,11 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { Button, DatePicker, Modal, Select } from "antd";
+import { Button, DatePicker, Modal, AutoComplete } from "antd";
 import dayjs, { Dayjs } from "dayjs";
 import {
   CalendarIcon,
   LocationIcon,
 } from "../../../../common/components/Icons";
 import { addressRepository } from "../../../../data/address/repository/address_repository";
-import { use } from "i18next";
 import { AddressResponse } from "../../../../data/address/model/response/address_response";
 
 export interface FilterValues {
@@ -182,23 +181,18 @@ const SearchFilterBar: React.FC<Props> = ({ values, onChange, onFind }) => {
         okText="Áp dụng"
         destroyOnClose
       >
-        <Select
-          showSearch
+        <AutoComplete
           value={loc}
-          onChange={setLoc}
+          onChange={(value) => setLoc(value)}
           onSearch={remoteSearch}
           placeholder="Chọn địa điểm"
           className="w-full"
-          loading={fetchingAddr}
-          filterOption={false}
           options={addresses.map((a) => ({
-            key: a.place_id,
             value: a.name,
             label: a.name,
           }))}
         />
       </Modal>
-
       <Modal
         open={openDates}
         onCancel={() => setOpenDates(false)}

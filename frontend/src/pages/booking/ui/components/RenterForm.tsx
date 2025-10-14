@@ -1,6 +1,3 @@
-import { useEffect, useState } from "react";
-import type { UserResponse } from "../../../../data/user/model/response/user_response";
-import { userRepository } from "../../../../data/user/repository/user_repository";
 type FormState = {
   name?: string;
   identityCard?: string;

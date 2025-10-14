@@ -2,7 +2,7 @@
 export const ITEM_CARD_CONSTANTS = {
   DEFAULT_DISCOUNT_PERCENT: 14,
   DEFAULT_ORIGINAL_PRICE: "1.170K",
-  DEFAULT_NO_IMAGE: "https://via.placeholder.com/320x180?text=No+Image",
+  DEFAULT_NO_IMAGE: "/elementor-placeholder-image.png",
 
   // Car specifications (can be extended)
   SPECS: {

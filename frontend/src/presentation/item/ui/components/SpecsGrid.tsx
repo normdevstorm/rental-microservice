@@ -31,7 +31,7 @@ export const SpecsGrid: React.FC<{
       {specs.map((s, i) => (
         <div
           key={`${s.label}-${i}`}
-          className="rounded-2xl border border-black/10 bg-white p-4 md:p-5 shadow-sm transition-shadow hover:shadow-md"
+          className="rounded-2xl border border-black/10 bg-white p-4 md:p-5 shadow-sm"
         >
           <div className="text-[11px] uppercase tracking-wide text-gray-500">
             {s.label}

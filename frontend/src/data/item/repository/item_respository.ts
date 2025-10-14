@@ -1,18 +1,11 @@
-import { toUtcMidnight, toUtcMidnightISO } from "../../../common/helper";
-import { axiosInstance } from "../../../common/services/axios";
+import { toUtcMidnight } from "../../../common/helper";
 import {
-  AvailabilityStatus,
   AvailabilityStatusType,
   ItemCategoryType,
 } from "../../../common/types/enums/enums";
-import { isMotorbikeItem } from "../../../common/types/guards/type_guards";
 import { ApiResponse } from "../../common/ApiResponse";
 import { itemApi } from "../api/item_api";
-import { mockItemApi } from "../api/mock_item_api";
-import { CarItem } from "../model/common/car_item";
-import { MotorbikeItem } from "../model/common/motorbike_item";
 import { CreateCarItemRequest } from "../model/request/create_car_item_request";
-import { CreateItemRequest } from "../model/request/create_item_request";
 import { CreateMotorbikeItemRequest } from "../model/request/create_motorbike_item_request";
 import { CreateItemResponse } from "../model/response/create_item_response";
 import { ItemResponse } from "../model/response/item_response";

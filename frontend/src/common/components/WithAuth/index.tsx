@@ -1,5 +1,4 @@
 import { ComponentType, useEffect, useState } from "react";
-import { authRepository } from "../../../data/auth/repository/auth_reponsitory";
 import { useNavigate } from "react-router";
 import localStorageService from "../../services/localStorageService";
 import { useAppSelector } from "../../../store";

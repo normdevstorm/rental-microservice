@@ -1,6 +1,6 @@
 import React from "react";
 import { createPortal } from "react-dom";
-import AlertDialog, { AlertDialogBase, AlertThemeType } from "./index";
+import { AlertDialogBase, AlertThemeType } from "./index";
 
 export type UseAlert = {
   notify: (message: string) => void;

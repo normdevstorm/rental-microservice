@@ -2,7 +2,6 @@ import Axios from "axios";
 import localStorageService from "./localStorageService";
 import { ADDRESS_API_URL, API_URL } from "../const/path";
 import { authRepository } from "../../data/auth/repository/auth_reponsitory";
-import { log } from "console";
 import { LoginResponse } from "../../data/auth/model/response/login_response";
 
 export const axiosInstance = Axios.create({
@@ -24,7 +23,7 @@ axiosInstance.interceptors.request.use(
   (config: any) => {
     if (
       ["/auth/signin", "/auth/signup"].every((url) => {
-        return url != config.url;
+        return url !== config.url;
       })
     ) {
       const token = localStorageService.getLocalStorage("accessToken");
@@ -39,58 +38,10 @@ axiosInstance.interceptors.request.use(
   }
 );
 
-const logout = async () => {
-  await authRepository.logout();
+const localLogout = async () => {
+  await authRepository.logout(true);
   window.location.href = "/login";
 };
-
-// axiosInstance.interceptors.response.use(
-//   (response) => response,
-//   (error: any) => {
-//     const originalConfig = error.config;
-
-//     if (error.response?.status !== 401) {
-//       return Promise.reject(error?.response?.data);
-//     } else {
-//       if (
-//         [
-//           "/auth/signin",
-//           "/auth/signup",
-//           "/auth/logoutone",
-//           "/auth/refresh",
-//         ].every((url) => {
-//           return url != originalConfig.url;
-//         })
-//       ) {
-//         // {logout();}
-//         ///TODO: handle this later after refresh token works properly
-//         const refreshToken =
-//           localStorageService.getLocalStorage("refreshToken");
-//         if (refreshToken === undefined) {
-//           return error;
-//         }
-//         // Axios.defaults.headers.common.Authorization = `Bearer ${refreshToken}`;
-//         return Axios.post(`${API_URL}/auth/refresh`, {
-//           refreshToken: refreshToken,
-//           deviceId: localStorageService.getLocalStorage("fcmToken"),
-//         }).then((res) => {
-//           if (res.status === 200) {
-//             const data = res.data.data as LoginResponse;
-//             localStorageService.setLocalStorage("accessToken", data.token);
-//             localStorageService.setLocalStorage(
-//               "refreshToken",
-//               data.refreshToken
-//             );
-//             originalConfig.headers.Authorization = `Bearer ${data.token}`;
-//             return axiosInstance(originalConfig);
-//           }
-//           logout();
-//           return error;
-//         });
-//       }
-//     }
-//   }
-// );
 
 let isRefreshing = false;
 let failedQueue: any[] = [];
@@ -112,44 +63,67 @@ axiosInstance.interceptors.response.use(
     const originalRequest = error.config;
 
     if (error.response?.status === 401 && !originalRequest._retry) {
-      if (isRefreshing) {
-        return new Promise((resolve, reject) => {
-          failedQueue.push({ resolve, reject });
-        }).then((token) => {
-          originalRequest.headers.Authorization = `Bearer ${token}`;
+      if (
+        [
+          "/auth/signin",
+          "/auth/signup",
+          "/auth/logoutone",
+          "/auth/refresh",
+        ].every((url) => {
+          return url !== originalRequest.url;
+        })
+      ) {
+        if (isRefreshing) {
+          return new Promise((resolve, reject) => {
+            failedQueue.push({ resolve, reject });
+          }).then((token) => {
+            originalRequest.headers.Authorization = `Bearer ${token}`;
+            return axiosInstance(originalRequest);
+          });
+        }
+
+        originalRequest._retry = true;
+        isRefreshing = true;
+
+        const refreshToken =
+          localStorageService.getLocalStorage("refreshToken");
+
+        try {
+          const res = await Axios.post(`${API_URL}/auth/refresh`, {
+            refreshToken,
+            deviceId: localStorageService.getLocalStorage("fcmToken"),
+          });
+
+          const data = res.data.data as LoginResponse;
+          localStorageService.setLocalStorage("accessToken", data.token);
+          localStorageService.setLocalStorage(
+            "refreshToken",
+            data.refreshToken
+          );
+
+          originalRequest.headers.Authorization = `Bearer ${data.token}`;
+          processQueue(null, data.token);
+
           return axiosInstance(originalRequest);
-        });
+        } catch (err) {
+          processQueue(err, null);
+          localLogout();
+          return Promise.reject(err);
+        } finally {
+          isRefreshing = false;
+        }
+      } else if (
+        ["/auth/logoutone", "/auth/refresh"].some((url) => {
+          return url === originalRequest.url;
+        })
+      ) {
+        // processQueue(error, null);
+        localLogout();
+        return Promise.reject(error);
       }
 
-      originalRequest._retry = true;
-      isRefreshing = true;
-
-      const refreshToken = localStorageService.getLocalStorage("refreshToken");
-
-      try {
-        const res = await Axios.post(`${API_URL}/auth/refresh`, {
-          refreshToken,
-          deviceId: localStorageService.getLocalStorage("fcmToken"),
-        });
-
-        const data = res.data.data as LoginResponse;
-        localStorageService.setLocalStorage("accessToken", data.token);
-        localStorageService.setLocalStorage("refreshToken", data.refreshToken);
-
-        originalRequest.headers.Authorization = `Bearer ${data.token}`;
-        processQueue(null, data.token);
-
-        return axiosInstance(originalRequest);
-      } catch (err) {
-        processQueue(err, null);
-        logout();
-        return Promise.reject(err);
-      } finally {
-        isRefreshing = false;
-      }
+      return Promise.reject(error);
     }
-
-    return Promise.reject(error);
   }
 );
 

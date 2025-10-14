@@ -2,8 +2,6 @@ import { axiosInstance } from "../../../common/services/axios";
 import {
   BookingStatusType,
   PaymentBookingStatusType,
-  PaymentKindType,
-  PaymentProcessStatusType,
 } from "../../../common/types/enums/enums";
 import { ApiResponse } from "../../common/ApiResponse";
 import { CreateBookingRequest } from "../model/request/create_booking_request";
