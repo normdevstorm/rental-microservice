@@ -1,7 +1,5 @@
-import { NavLink, Outlet, useNavigate } from "react-router-dom";
-import styles from "./styles.module.scss";
+import { Outlet, useNavigate } from "react-router-dom";
 import withAuth from "../WithAuth";
-import { Button } from "antd";
 import localStorageService from "../../services/localStorageService";
 import { logout } from "../../../api/authentication";
 import Header from "../Header/Header";
@@ -9,11 +7,6 @@ import Footer from "../Footer/Footer";
 
 function Home() {
   const navigate = useNavigate();
-  const handleLogout = async () => {
-    await logout();
-    localStorageService.clearKey("accessToken");
-    navigate("/login");
-  };
   return (
     <div className="flex flex-col ">
       {/* <div className="border border-solid border-black h-12 fixed top-0 w-full z-10 bg-gray-200 p-2"> */}

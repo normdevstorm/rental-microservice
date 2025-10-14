@@ -1,6 +1,5 @@
 import localStorageService from "../../../common/services/localStorageService";
 import { clearPersistedState } from "../../../store";
-import { ApiResponse } from "../../common/ApiResponse";
 import { authApi } from "../api/auth_api";
 import type { LoginRequest } from "../model/request/login_request";
 import { SignUpRequest } from "../model/request/signup_request";
@@ -35,8 +34,10 @@ export class AuthRepository {
     }
   }
 
-  async logout(): Promise<void> {
-    await authApi.logout();
+  async logout(isLocalLogOut?: boolean): Promise<void> {
+    if (!isLocalLogOut) {
+      await authApi.logout();
+    }
     localStorageService.clearKey("accessToken");
     localStorageService.clearKey("refreshToken");
     clearPersistedState();

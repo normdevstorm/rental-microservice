@@ -1,8 +1,4 @@
-import {
-  axiosAddressInstance,
-  axiosInstance,
-} from "../../../common/services/axios";
-import { ApiResponse } from "../../common/ApiResponse";
+import { axiosAddressInstance } from "../../../common/services/axios";
 import { AddressResponse } from "../model/response/address_response";
 
 class AddressApi {

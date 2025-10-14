@@ -20,9 +20,10 @@ const queryClient = new QueryClient({
       // /*Queries that fail are silently retried 3 times, with exponential backoff delay before capturing and displaying an error to the UI if retry = true*/
       retry: false,
       // /*default staleTime means queries will not refetch their data as often*/
-      staleTime: 1 * 10 * 1000,
-      refetchInterval: 1 * 5 * 1000,
+      // staleTime: 1 * 10 * 1000,
+      // refetchInterval: 1 * 5 * 1000,
       // cacheTime:
+      refetchOnMount: true,
     },
   },
 });

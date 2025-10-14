@@ -16,6 +16,8 @@ import { ItemCategory } from "../../types/enums/enums";
 import { CarItem } from "../../../data/item/model/common/car_item";
 import { MotorbikeItem } from "../../../data/item/model/common/motorbike_item";
 import { formatThousands } from "../../../pages/rent-out/ui/components/CurrencyInput";
+import { Img } from "react-image";
+import { ShimmerThumbnail } from "react-shimmer-effects";
 
 const ItemCard: React.FC<ItemCardProps> = ({
   item,
@@ -35,24 +37,34 @@ const ItemCard: React.FC<ItemCardProps> = ({
   return (
     <div className={`${styles.itemCard} ${className}`} onClick={handleClick}>
       <div className={styles.imageContainer}>
-        <img
+        <Img
           src={
             item.itemImages.at(0)?.imageUrl ||
             ITEM_CARD_CONSTANTS.DEFAULT_NO_IMAGE
           }
+          loader={<ShimmerThumbnail height={170} />}
+          unloader={
+            <img
+              src={ITEM_CARD_CONSTANTS.DEFAULT_NO_IMAGE}
+              className={styles.image}
+              alt="No Image"
+            />
+          }
           alt={item.name}
+          loading="lazy"
+          decoding="async"
           className={styles.image}
         />
         {/* Discount badge
         {showDiscount && (
           <span className={styles.discountBadge}>Giảm {discountPercent}%</span>
         )} */}
-        {/* Lightning icon */}
+        {/* Lightning icon
         {showLightningBadge && (
           <span className={styles.lightningBadge}>
             <LightningIcon />
           </span>
-        )}
+        )} */}
       </div>
       <div className={styles.depositTag}>
         <CheckCircleIcon />
@@ -155,7 +167,7 @@ const ItemCard: React.FC<ItemCardProps> = ({
         </span>
 
         <span className={styles.price}>
-          { formatThousands(item.price.toString())}
+          {formatThousands(item.price.toString())}
           {ITEM_CARD_CONSTANTS.LABELS.PRICE_PER_DAY}
         </span>
       </div>
