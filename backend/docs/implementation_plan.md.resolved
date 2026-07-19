@@ -1,0 +1,248 @@
+# Observability Integration Plan
+
+This document outlines a structured, prompt-engineered execution plan for integrating an observability stack (OpenTelemetry, Grafana, Loki, Prometheus, Jaeger) into the microservices architecture.
+
+---
+
+## 1. System Context
+
+*   **Environment**: Java 17, Spring Boot 3.x, Maven, Docker Compose.
+*   **Architecture**:
+    *   **Telemetry Generation**: Spring Boot microservices instrumented via Micrometer Observation and OpenTelemetry.
+    *   **Telemetry Collection**: OpenTelemetry Collector receives OTLP logs, metrics, and traces.
+    *   **Telemetry Storage & Analysis**: 
+        *   **Metrics**: Prometheus (scrapes from OTel Collector).
+        *   **Logs**: Grafana Loki (ingests OTLP logs directly exported from microservices).
+        *   **Traces**: Jaeger (receives OTLP traces).
+    *   **Visualization**: Grafana dashboard consolidating Loki, Prometheus, and Jaeger datasources.
+
+---
+
+## 2. Instruction Hierarchy & Phase Breakdown
+
+### Phase 1: Logging Separation & Tracing Dependencies (`common-lib`)
+
+Configure `common-lib` so all dependent microservices inherit:
+1.  **Dev Console Appender**: A clean, colored, human-readable console pattern containing trace and span IDs.
+2.  **OTel Appender**: OpenTelemetry Logback Appender to export logs directly to the OpenTelemetry SDK (which pushes them via OTLP to the OTel Collector/Loki).
+
+#### Step 1.1: Dependency Injection in `common-lib/pom.xml`
+Add dependencies for Micrometer tracing, OpenTelemetry bridge, and the OpenTelemetry Logback appender.
+
+**Few-Shot Example / Template:**
+```xml
+<dependencies>
+    <!-- Observability & Tracing Support -->
+    <dependency>
+        <groupId>io.micrometer</groupId>
+        <artifactId>micrometer-registry-prometheus</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.micrometer</groupId>
+        <artifactId>micrometer-tracing-bridge-otel</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>io.opentelemetry</groupId>
+        <artifactId>opentelemetry-exporter-otlp</artifactId>
+    </dependency>
+
+    <!-- OpenTelemetry Logback Appender for Direct Log Shipping -->
+    <dependency>
+        <groupId>io.opentelemetry.instrumentation</groupId>
+        <artifactId>opentelemetry-logback-appender-1.0</artifactId>
+        <version>2.3.0-alpha</version>
+    </dependency>
+</dependencies>
+```
+
+#### Step 1.2: Dual-Appender Logback Configuration
+Create `logback-spring.xml` in `common-lib/src/main/resources/` configuring standard console logging for local developer terminals alongside the background OTel exporter.
+
+**Few-Shot Example / Template:**
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
+
+    <!-- 1. Dev Console Appender (Human-Readable & Colored) -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr([%X{traceId:-},%X{spanId:-}]){yellow} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}</pattern>
+        </encoder>
+    </appender>
+
+    <!-- 2. OpenTelemetry Appender (Structured, sent via OTLP to Collector) -->
+    <appender name="OTEL" class="io.opentelemetry.instrumentation.logback.appender.v1_0.OpenTelemetryAppender">
+        <captureExperimentalAttributes>true</captureExperimentalAttributes>
+        <captureKeyValuePairAttributes>true</captureKeyValuePairAttributes>
+        <captureCodeAttributes>true</captureCodeAttributes>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="OTEL"/>
+    </root>
+</configuration>
+```
+
+---
+
+### Phase 2: Observability Tools Deployment (Infrastructure)
+
+Provision the observability services via Docker Compose. All telemetry flows from applications to the OpenTelemetry Collector, which distributes it to the respective backends.
+
+#### Step 2.1: OpenTelemetry Collector Configuration
+Create `dev-containers/otel-collector-config.yaml` to specify receivers, processors, and exporters.
+
+**Template / Config:**
+```yaml
+receivers:
+  otlp:
+    protocols:
+      grpc:
+        endpoint: 0.0.0.0:4317
+      http:
+        endpoint: 0.0.0.0:4318
+
+processors:
+  batch:
+
+exporters:
+  otlp/jaeger:
+    endpoint: jaeger:4317
+    tls:
+      insecure: true
+  prometheus:
+    endpoint: 0.0.0.0:8889
+  loki:
+    endpoint: http://loki:3100/loki/api/v1/push
+
+service:
+  pipelines:
+    traces:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [otlp/jaeger]
+    metrics:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [prometheus]
+    logs:
+      receivers: [otlp]
+      processors: [batch]
+      exporters: [loki]
+```
+
+#### Step 2.2: Docker Compose Provisioning
+Create `dev-containers/docker-compose.observability.yml` defining the observability backend stack.
+
+**Template / Config:**
+```yaml
+version: '3.8'
+
+services:
+  otel-collector:
+    image: otel/opentelemetry-collector-contrib:0.95.0
+    container_name: otel_collector
+    command: ["--config=/etc/otel-collector-config.yaml"]
+    volumes:
+      - ./otel-collector-config.yaml:/etc/otel-collector-config.yaml
+    ports:
+      - "4317:4317" # OTLP gRPC
+      - "4318:4318" # OTLP HTTP
+      - "8889:8889" # Prometheus metrics exporter
+    networks:
+      - rental_network
+
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: prometheus_service
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - "9090:9090"
+    networks:
+      - rental_network
+
+  loki:
+    image: grafana/loki:latest
+    container_name: loki_service
+    ports:
+      - "3100:3100"
+    networks:
+      - rental_network
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+    container_name: jaeger_service
+    ports:
+      - "16686:16686" # Web UI
+    networks:
+      - rental_network
+
+  grafana:
+    image: grafana/grafana:latest
+    container_name: grafana_ui
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    networks:
+      - rental_network
+
+networks:
+  rental_network:
+    external: true
+    name: dev-containers_rental_network
+```
+
+---
+
+### Phase 3: Application Export Configuration
+
+Enable OTLP exporters in your Spring Boot application properties (e.g., `application.yml` inside the microservices).
+
+**Template:**
+```yaml
+management:
+  otlp:
+    tracing:
+      endpoint: http://otel-collector:4318/v1/traces
+    metrics:
+      export:
+        url: http://otel-collector:4318/v1/metrics
+    logs:
+      endpoint: http://otel-collector:4318/v1/logs
+  tracing:
+    sampling:
+      probability: 1.0 # Sample all requests in dev environment
+```
+
+---
+
+## 3. Verification & Error Recovery Gates
+
+### Gate 1: Spring Boot Logging Validation
+1.  **Action**: Build and run `auth-service` locally.
+2.  **Expected Output**: Standard developer console output logs must print in standard readable format with colored text and `[traceId,spanId]` prefix.
+3.  **Check**:
+    ```bash
+    curl -X GET http://localhost:8080/actuator/health
+    # Verify console output shows: [2026-07-14 ...] INFO [..., ...] --- [main] ...
+    ```
+4.  **Error Recovery**: If the `[traceId,spanId]` values are blank during requests, check that `micrometer-tracing-bridge-otel` is active and MDC holds the values correctly.
+
+### Gate 2: Infrastructure Health Check
+1.  **Action**: Run `docker compose -f dev-containers/docker-compose.observability.yml up -d` and check status.
+2.  **Expected Output**: Containers `otel_collector`, `prometheus_service`, `loki_service`, `jaeger_service`, and `grafana_ui` must be running.
+3.  **Check**:
+    ```bash
+    docker ps --filter "network=dev-containers_rental_network"
+    ```
+4.  **Error Recovery**: Ensure the external network `dev-containers_rental_network` exists. Create it manually if needed: `docker network create dev-containers_rental_network`.
+
+### Gate 3: End-to-End Correlation Validation
+1.  **Action**: Call a request path through `auth-service` to trigger down-stream actions.
+2.  **Check**:
+    *   Open Jaeger UI (`http://localhost:16686`) and verify trace traces exist.
+    *   Open Grafana (`http://localhost:3000`), navigate to **Explore**, query Loki using `traceId="<id>"` and verify the exact log details are correlated with the trace.

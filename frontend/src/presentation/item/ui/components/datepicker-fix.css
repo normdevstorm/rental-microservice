@@ -1,0 +1,12 @@
+/* Fix react-datepicker input and wrapper to expand full width within Tailwind containers */
+.react-datepicker-wrapper,
+.react-datepicker__input-container,
+.react-datepicker__input-container input {
+  width: 100% !important;
+  display: block;
+}
+
+/* Ensure clear icon doesn't collapse width */
+.react-datepicker__close-icon::after {
+  line-height: 1.25rem; /* match py-2.5 roughly */
+}

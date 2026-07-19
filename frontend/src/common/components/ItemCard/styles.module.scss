@@ -1,0 +1,165 @@
+.itemCard {
+  border-radius: 0.75rem;
+  padding: 0.875rem;
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  cursor: pointer;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  width: 100%; /* Ensure the card takes full width of its container */
+  min-width: 280px; /* Set a minimum width */
+  max-width: 400px; /* Set a maximum width */
+}
+
+.itemCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.imageContainer {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 10rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.discountBadge {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background-color: #f97316;
+  color: white;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.lightningBadge {
+  position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
+  background-color: white;
+  border-radius: 9999px;
+  padding: 0.25rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+}
+
+.depositTag {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  background-color: #dcfce7;
+  color: #15803d;
+  font-size: 0.7rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 0.25rem;
+  margin-top: 0.25rem;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-top: 0.25rem;
+  color: #1e293b;
+  line-height: 1.25;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+  height: 1.4em;
+}
+
+.specRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 0.25rem;
+  padding: 0.25rem 0;
+  border-top: 1px solid #f3f4f6;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.specItem {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background-color: #f8fafc;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+  flex-grow: 1;
+  min-width: 28%;
+  justify-content: center;
+}
+
+.locationRow {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.7rem;
+  color: #64748b;
+  margin-top: 0.2rem;
+  background-color: #f8fafc;
+  padding: 0.25rem 0.4rem;
+  border-radius: 0.25rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ratingRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.3rem;
+  padding: 0.3rem 0.5rem;
+  background-color: #f8fafc;
+  border-radius: 0.3rem;
+}
+
+/* Removed .ratings class as it's no longer needed */
+
+.ratingItem {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.starRating {
+  color: #facc15;
+  font-weight: 600;
+  font-size: 0.75rem;
+  background-color: #fef9c3;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+.tripCount {
+  color: #16a34a;
+  font-size: 0.75rem;
+  background-color: #dcfce7;
+  padding: 0.15rem 0.35rem;
+  border-radius: 0.25rem;
+}
+
+/* Removed .priceContainer and .originalPrice as they're no longer needed */
+
+.price {
+  color: #16a34a;
+  font-weight: 700;
+  font-size: 1.1rem;
+  line-height: 1.1;
+  padding: 0.15rem 0.35rem;
+  background-color: #f0fdf4;
+  border-radius: 0.25rem;
+}

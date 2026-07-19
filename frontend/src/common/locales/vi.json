@@ -1,0 +1,27 @@
+{
+  "field_required": "Trường bắt buộc, vui lòng nhập một giá trị",
+  "field_number_required": "Yêu cầu giá trị là kiểu số",
+  "convert": "Chuyển",
+  "result": "Kết quả",
+  "language": "Ngôn ngữ",
+  "small": "Nhỏ",
+  "default": "Mặc định",
+  "large": "Lớn",
+  "form_size": "Kích cỡ biểu mẫu",
+  "vietnam": "Việt Nam",
+  "english": "Tiếng Anh",
+  "thailand": "Tiếng Thái",
+  "amount": "Số tiền",
+  "currency_form_title": "Mẫu chuyển đổi tiền tệ",
+  "convert_from": "Chuyển từ đơn vị",
+  "convert_to": "Chuyển sang đơn vị",
+  "placeholder_from": "Nhập ký tự tham chiếu đến loại tiền sẽ chuyển đổi từ (như USD,..)",
+  "placeholder_to": "Nhập ký tự tham chiếu loại tiền sẽ quy đổi sang (như VNĐ,...)",
+  "placeholder_amount": "Nhập số tiền bạn muốn chuyển đổi",
+  "booking_status_pending": "Chờ xác nhận",
+  "booking_status_confirm": "Đã xác nhận",
+  "booking_status_cancelled": "Đã hủy",
+  "booking_status_completed": "Hoàn tất",
+  "booking_status_negotiation": "Đang thương lượng"
+
+}
