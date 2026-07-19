@@ -1,0 +1,2 @@
+org.example.commonlib.config.OtelLoggingAutoConfiguration
+org.example.commonlib.config.WebLoggingAutoConfiguration

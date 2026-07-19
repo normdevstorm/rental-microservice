@@ -1,4 +1,4 @@
-package com.he187184.mvc.authservice.service;
+package com.he187184.mvc.authservice.service.impl;
 
 import com.he187184.mvc.authservice.entity.Role;
 import com.he187184.mvc.authservice.repository.RoleRepository;
@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
-import java.util.Optional;
 import java.util.Set;
 
 @Service

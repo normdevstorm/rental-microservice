@@ -15,23 +15,24 @@ public class TokenVersionService {
     }
 
     public void saveTokenVersion(Long userId, int version) {
-        String key = "token_version:" + userId;
-        redisTemplate.opsForValue().set(key, String.valueOf(version));
+        redisTemplate.opsForValue().set(getKey(userId), String.valueOf(version));
     }
 
     public int getTokenVersion(Long userId) {
-        String key = "token_version:" + userId;
-        String versionStr = redisTemplate.opsForValue().get(key);
+        String versionStr = redisTemplate.opsForValue().get(getKey(userId));
         return versionStr != null ? Integer.parseInt(versionStr) : 0;
     }
 
     public void deleteTokenVersion(Long userId) {
-        String key = "token_version:" + userId;
-        redisTemplate.delete(key);
+        redisTemplate.delete(getKey(userId));
     }
+
     public void updateTokenVersion(Long userId, int newVersion) {
-        String key = "token_version:" + userId;
-        redisTemplate.opsForValue().set(key, String.valueOf(newVersion));
+        redisTemplate.opsForValue().set(getKey(userId), String.valueOf(newVersion));
+    }
+
+    private static String getKey(Long userId){
+        return "token_version:" + userId;
     }
 
 }

@@ -9,7 +9,8 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 @SpringBootApplication
 @ComponentScan(basePackages = {
         "com.he187184.mvc.authservice",
-        "org.example.commonlib.security"
+        "org.example.commonlib.security",
+        "org.example.commonlib.aspects"
 })
 public class AuthServiceApplication {
 

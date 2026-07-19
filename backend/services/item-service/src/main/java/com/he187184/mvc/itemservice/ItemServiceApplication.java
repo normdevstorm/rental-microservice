@@ -11,7 +11,8 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @EnableFeignClients
 @ComponentScan(basePackages = {
         "com.he187184.mvc.itemservice",
-        "org.example.commonlib.security" // ✅ để Spring quét JwtAuthenticationFilter
+        "org.example.commonlib.security",
+        "org.example.commonlib.aspects" // ✅ để Spring quét JwtAuthenticationFilter
 })
 
 public class ItemServiceApplication {

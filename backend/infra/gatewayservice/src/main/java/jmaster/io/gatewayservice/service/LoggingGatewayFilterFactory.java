@@ -24,13 +24,9 @@ public class LoggingGatewayFilterFactory extends AbstractGatewayFilterFactory<Lo
             // Pre-processing
             logger.info("Pre GatewayFilter logging: ");
             return chain.filter(exchange)
-                    .then(Mono.fromRunnable(() -> {
-                        // Post-processing
-                        logger.info("Post GatewayFilter logging: ");
-                    }));
+                    .then(Mono.fromRunnable(() -> logger.info("Post GatewayFilter logging: ")));
         }, -2);
     }
-
     public static class Config {
         //Put the configuration properties for your filter here
         private String baseMsg;

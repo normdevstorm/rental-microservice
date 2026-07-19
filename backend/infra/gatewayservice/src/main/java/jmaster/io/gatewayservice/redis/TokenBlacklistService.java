@@ -19,8 +19,10 @@ public class TokenBlacklistService {
     }
 
     // Kiểm tra token có bị blacklist không
-    public boolean isBlacklisted(String jti) {
-        return redisTemplate.hasKey("blacklist:" + jti);
+    public boolean isBlackListed(String jti) {
+        Boolean result = redisTemplate.hasKey("blackList:" + jti);
+        return Boolean.TRUE.equals(result);
     }
+
 }
 

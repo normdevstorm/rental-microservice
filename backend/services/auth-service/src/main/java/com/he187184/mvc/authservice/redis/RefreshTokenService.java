@@ -16,14 +16,10 @@ public class RefreshTokenService {
         this.redisTemplate = redisTemplate;
     }
 
-
-
-    // Lưu refresh token
     public void saveRefreshToken(String refreshToken, Long userId, String deviceId, long expiryDays) {
         Map<String, String> data = new HashMap<>();
         data.put("userId", userId.toString());
         data.put("deviceId", deviceId);
-
         redisTemplate.opsForHash().putAll("refresh:" + refreshToken, data);
         redisTemplate.expire("refresh:" + refreshToken, expiryDays, TimeUnit.DAYS);
         redisTemplate.opsForSet().add("user:refreshTokens:"+userId , refreshToken);
@@ -46,12 +42,10 @@ public class RefreshTokenService {
     }
     // Xóa refresh token (logout)
     public void deleteRefreshToken(String refreshToken, Long userId) {
-        // Xóa hash
         redisTemplate.delete("refresh:" + refreshToken);
-
-        // Xóa khỏi Set của user
         redisTemplate.opsForSet().remove("user:refreshTokens:" + userId, refreshToken);
     }
+
 
 }
 

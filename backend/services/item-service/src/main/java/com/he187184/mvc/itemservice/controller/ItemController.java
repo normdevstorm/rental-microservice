@@ -12,6 +12,8 @@ import com.he187184.mvc.itemservice.repository.ItemImageRepository;
 import com.he187184.mvc.itemservice.repository.ItemRepository;
 import com.he187184.mvc.itemservice.repository.MotorbikeRepository;
 import com.he187184.mvc.itemservice.service.ItemService;
+
+import org.example.commonlib.aspects.annotations.LoggingController;
 import org.example.commonlib.dto.BaseResponse;
 import org.example.commonlib.dto.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +61,7 @@ public class ItemController {
     }
 
     @GetMapping("/me")
+    @LoggingController
     public  ResponseEntity<?> getALlMyItem() {
         List<ItemDTO> itemDTOList = new ArrayList<>();
         itemDTOList = itemService.getAllMyItems();

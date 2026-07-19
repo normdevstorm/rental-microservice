@@ -1,6 +1,6 @@
 package jmaster.io.gatewayservice.client;
 
-import com.google.common.net.HttpHeaders;
+
 import jmaster.io.gatewayservice.dto.UserDTO;
 import org.example.commonlib.dto.BaseResponse;
 import org.springframework.core.ParameterizedTypeReference;

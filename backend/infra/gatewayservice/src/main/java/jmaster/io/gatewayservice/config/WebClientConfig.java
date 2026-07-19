@@ -1,6 +1,6 @@
 package jmaster.io.gatewayservice.config;
 
-import com.google.common.net.HttpHeaders;
+import org.springframework.http.HttpHeaders;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

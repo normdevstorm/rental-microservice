@@ -1,6 +1,4 @@
 package com.he187184.mvc.authservice.dto.request;
-
-import com.he187184.mvc.authservice.entity.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;

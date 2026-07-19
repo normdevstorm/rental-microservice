@@ -1,4 +1,4 @@
-package org.example.commonlib.exception;
+package org.example.commonlib.exception.custom;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

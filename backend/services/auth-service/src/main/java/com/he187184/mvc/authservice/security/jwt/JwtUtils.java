@@ -29,16 +29,15 @@ public class JwtUtils {
 
     @Value("${bezkoder.app.jwtSecret}")
     private String jwtSecret;
-
     @Value("${bezkoder.app.jwtExpirationMs}")
     private int jwtExpirationMs;
     @Value("${bezkoder.app.refreshExpirationMs}")
-    private int  refreshExpirationMs ; // 7 ngày
+    private int refreshExpirationMs; // 7 ngày
+
     @Autowired
     UserDetailsServiceImpl userDetailsService;
 
     public String generateJwtToken(Authentication authentication, String deviceID) {
-
         UserDetailsImpl userPrincipal = (UserDetailsImpl) authentication.getPrincipal();
         String jti = UUID.randomUUID().toString();
         return Jwts.builder()
@@ -47,7 +46,7 @@ public class JwtUtils {
 
                 .claim("id", userPrincipal.getId())
                 .claim("deviceId", deviceID)
-                .claim("tokenVersion",userPrincipal.getTokenVersion())// thêm userId
+                .claim("tokenVersion", userPrincipal.getTokenVersion())// thêm userId
                 .claim("roles", userPrincipal.getAuthorities()
                         .stream()
                         .map(item -> item.getAuthority())
@@ -59,62 +58,46 @@ public class JwtUtils {
     }
 
     public String generateRefreshJwtToken() {
-      return UUID.randomUUID().toString();
-
+        return UUID.randomUUID().toString();
     }
-     public JwtResponse generateTokenByEmail(String email, String deviceID) {
 
-        UserDetailsImpl userDetails = (UserDetailsImpl) userDetailsService.loadUserByUsername(email);
-
-        UsernamePasswordAuthenticationToken authentication =
-                new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
-
+    public JwtResponse generateTokenByEmail(String email, String deviceID) {
+        UsernamePasswordAuthenticationToken authentication = buildAuthentication(email);
         String jwt = generateJwtToken(authentication, deviceID);
-         Set<String> roles = userDetails.getAuthorities().stream()
-                 .map(item -> item.getAuthority())
-                 .collect(Collectors.toSet());
-        return new JwtResponse(jwt,null,
-                 userDetails.getId(),
-                 userDetails.getUsername(),
-                 userDetails.getEmail(),
-                 roles);
-
-     }
-//    private Key getSignKey() {
-//        // Secret ở config server là Base64 string -> cần decode
-//        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
-//    }
-
-    private Key key() {
-        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
+        UserDetailsImpl userDetails = (UserDetailsImpl) authentication.getPrincipal();
+        Set<String> roles = extractRoles(userDetails);
+        return new JwtResponse(jwt, null,
+                userDetails.getId(),
+                userDetails.getUsername(),
+                userDetails.getEmail(),
+                roles);
     }
 
     public String getUserNameFromJwtToken(String token) {
         return Jwts.parserBuilder().setSigningKey(key()).build()
                 .parseClaimsJws(token).getBody().getSubject();
     }
+
     public String getJtiFromJwtToken(String token) {
-        return  extractClaims(token).getId();
+        return extractClaims(token).getId();
     }
+
     public Long getIdFromJwtToken(String token) {
         return extractClaims(token).get("id", Long.class);
     }
 
     public long getJwtExpirationMs(String token) {
         Date expiration = extractClaims(token).getExpiration();
-        return  (expiration.getTime() - System.currentTimeMillis());
+        return (expiration.getTime() - System.currentTimeMillis());
     }
 
     public Claims extractClaims(String token) {
         try {
-            Claims claims = Jwts.parserBuilder()
+            return Jwts.parserBuilder()
                     .setSigningKey(key())
                     .build()
                     .parseClaimsJws(token)
                     .getBody();
-
-
-            return claims; // Token hợp lệ
         } catch (ExpiredJwtException e) {
             throw new JwtException("Token expired", e);
         } catch (JwtException | IllegalArgumentException e) {
@@ -137,6 +120,20 @@ public class JwtUtils {
         }
 
         return false;
+    }
+    private static Set<String> extractRoles(UserDetailsImpl userDetails) {
+        return userDetails.getAuthorities().stream()
+                .map(item -> item.getAuthority())
+                .collect(Collectors.toSet());
+    }
+
+    private UsernamePasswordAuthenticationToken buildAuthentication(String email) {
+        UserDetailsImpl userDetails = (UserDetailsImpl) userDetailsService.loadUserByUsername(email);
+        return new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+    }
+
+    private Key key() {
+        return Keys.hmacShaKeyFor(Decoders.BASE64.decode(jwtSecret));
     }
 
 

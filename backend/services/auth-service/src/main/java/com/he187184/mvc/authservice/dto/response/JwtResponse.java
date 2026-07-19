@@ -1,6 +1,5 @@
 package com.he187184.mvc.authservice.dto.response;
 
-import com.he187184.mvc.authservice.entity.Role;
 import lombok.Data;
 
 import java.util.Set;

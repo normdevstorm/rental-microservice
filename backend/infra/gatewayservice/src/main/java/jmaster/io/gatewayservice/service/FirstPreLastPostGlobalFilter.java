@@ -14,25 +14,24 @@ import reactor.core.publisher.Mono;
 public class FirstPreLastPostGlobalFilter
         implements GlobalFilter, Ordered {
 
-    final Logger logger =
-            LoggerFactory.getLogger(FirstPreLastPostGlobalFilter.class);
+    final Logger logger = LoggerFactory.getLogger(FirstPreLastPostGlobalFilter.class);
 
     @Override
-    public Mono<Void> filter(ServerWebExchange exchange,
-                             GatewayFilterChain chain) {
+    public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String queryParamLocale = exchange.getRequest()
                 .getQueryParams()
                 .getFirst("locale");
 
         ServerWebExchange modifiedExchange = exchange.mutate()
-                .request(originalRequest -> originalRequest.headers(httpHeaders -> httpHeaders.remove(HttpHeaders.ORIGIN)))
+                .request(originalRequest ->
+                        originalRequest.headers(httpHeaders ->
+                                httpHeaders.remove(HttpHeaders.ORIGIN)))
                 .build();
 
         logger.info("First Pre Global Filter");
+
         return chain.filter(modifiedExchange)
-                .then(Mono.fromRunnable(() -> {
-                    logger.info("Last Post Global Filter");
-                }));
+                .then(Mono.fromRunnable(() -> logger.info("Last Post Global Filter")));
     }
 
     @Override

@@ -9,42 +9,35 @@ import org.example.commonlib.dto.ResponseCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 @RestController
 @RequestMapping("/users")
 public class UserController {
-    @Autowired
-    UserService userService;
-    @Autowired
-    private UserMapper userMapper;
+
+    private final UserService userService;
+    private final UserMapper userMapper;
+
+    public UserController(UserService userService, UserMapper userMapper) {
+        this.userService = userService;
+        this.userMapper = userMapper;
+    }
 
     @GetMapping("/me")
-    public ResponseEntity<?> getMe(){
+    public ResponseEntity<BaseResponse<UserDTO>> getMe() {
         UserDTO userDTO = userService.getMe();
-        if(userDTO==null){
-            return ResponseEntity
-                    .badRequest()
-                    .body(new BaseResponse<>(ResponseCode.USER_NOT_FOUND,false, null));
-        }
-        BaseResponse baseResponse = new BaseResponse<>("Get me successfully", true,"SUCCESS",userDTO);
-        return ResponseEntity.ok(baseResponse);
+        return ResponseEntity.ok(new BaseResponse<>("Get me successfully", true, "SUCCESS", userDTO));
     }
+
     @GetMapping("/{id}")
-    public ResponseEntity<?> getUserById(@PathVariable Long id){
+    public ResponseEntity<BaseResponse<UserDTO>> getUserById(@PathVariable Long id) {
         UserDTO userDTO = userService.getUserByID(id);
-        if(userDTO==null){
-            return ResponseEntity
-                    .badRequest()
-                    .body(new BaseResponse<>(ResponseCode.USER_NOT_FOUND,false, null));
-        }
-        BaseResponse baseResponse = new BaseResponse<>("Get me successfully", true,"SUCCESS",userDTO);
-        return ResponseEntity.ok(baseResponse);
+        return ResponseEntity.ok(new BaseResponse<>("Get user successfully", true, "SUCCESS", userDTO));
     }
+
     @PatchMapping("/me")
-    public ResponseEntity<?> updateMe(@RequestBody UserDTO userDTO){
+    public ResponseEntity<BaseResponse<UserDTO>> updateMe(@RequestBody UserDTO userDTO) {
         UserDTO dto = userService.updateMe(userDTO);
-        BaseResponse baseResponse = new BaseResponse<>("Get me successfully", true,"SUCCESS",dto);
-        return ResponseEntity.ok(baseResponse);
+        return ResponseEntity.ok(new BaseResponse<>("Update me successfully", true, "SUCCESS", dto));
     }
+
 
 }

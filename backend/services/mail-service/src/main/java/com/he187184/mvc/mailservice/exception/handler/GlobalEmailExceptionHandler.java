@@ -1,7 +1,6 @@
 package com.he187184.mvc.mailservice.exception.handler;
 
 import org.example.commonlib.dto.BaseResponse;
-import org.example.commonlib.exception.ApiException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
